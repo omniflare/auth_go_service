@@ -14,7 +14,7 @@ var DB *gorm.DB
 func Init(config *config.Config) {
 	uri := config.Database
 	var err error
-	DB, err := gorm.Open(postgres.Open(uri), &gorm.Config{
+	DB, err = gorm.Open(postgres.Open(uri), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})
 	if err != nil {
@@ -28,6 +28,5 @@ func Init(config *config.Config) {
 	}
 }
 
-
-// TODO : Optional -> we can also do a repository with all the db operations that way our db will not be a global variable 
-// not doing rn because that will be over engineering for this usecase. 
+// TODO : Optional -> we can also do a repository with all the db operations that way our db will not be a global variable
+// not doing rn because that will be over engineering for this usecase.
