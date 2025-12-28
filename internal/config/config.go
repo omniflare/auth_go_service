@@ -7,13 +7,12 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// new env vars so here. 
-// any other config related things go in this package ; 
+// new env vars so here.
+// any other config related things go in this package ;
 
 type Config struct {
-	PORT        string `env:"SERVER_PORT,required"`
+	PORT        string `env:"PORT,required"`
 	Database    string `env:"DATABASE_URL,required"`
-	ResendAPI   string `env:"RESEND_API_KEY,required"`
 	FirebaseAPI string `env:"FIREBASE_API,required"`
 }
 

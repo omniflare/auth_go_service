@@ -13,6 +13,7 @@ var DB *gorm.DB
 
 func Init(config *config.Config) {
 	uri := config.Database
+	var err error
 	DB, err := gorm.Open(postgres.Open(uri), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})

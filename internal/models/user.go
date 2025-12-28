@@ -9,7 +9,7 @@ type User struct {
 	Name        string        `json:"name"`
 	PhotoURL    string        `json:"photoUrl"`
 	Role        string        `gorm:"default:'user'" json:"role"`
-	Metadata    *UserMetadata `json:"metadata"`
+	Metadata    *UserMetadata `gorm:"serializer:json" json:"metadata"`
 }
 
 type UserMetadata struct {
